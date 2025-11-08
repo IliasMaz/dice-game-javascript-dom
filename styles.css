@@ -10,6 +10,10 @@
 
 }
 
+button{
+  font-size: large;
+}
+
 body {
   background-color: #393E46;
 }
@@ -27,6 +31,11 @@ h2{
   text-shadow: 5px 0 #232931;
   font-size: 4rem;
   color:#4ECCA3
+}
+
+button{
+  size: 30%;
+  cursor: pointer;
 }
 
 p {
