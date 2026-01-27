@@ -7,41 +7,48 @@
 .dice {
   text-align: center;
   display: inline-block;
-
 }
 
-button{
-  font-size: large;
+#btn {
+  width: 250px;
+  height: 10vh;
+  background-color: #393e46;
+  color: #4ecca3;
+}
+
+#btn:hover {
+  color: #393e46;
+  background-color: #4ecca3;
 }
 
 body {
-  background-color: #393E46;
+  background-color: #393e46;
 }
 
 h1 {
   margin: 30px;
-  font-family: 'Lobster', cursive;
+  font-family: "Lobster", cursive;
   text-shadow: 5px 0 #232931;
   font-size: 3rem;
-  color: #4ECCA3;
+  color: #4ecca3;
 }
-h2{
+h2 {
   margin: 15px;
-  font-family:'Lobster','Courier New', Courier, monospace;
+  font-family: "Lobster", "Courier New", Courier, monospace;
   text-shadow: 5px 0 #232931;
   font-size: 4rem;
-  color:#4ECCA3
+  color: #4ecca3;
 }
 
-button{
+button {
   size: 30%;
   cursor: pointer;
 }
 
 p {
   font-size: 2rem;
-  color: #4ECCA3;
-  font-family: 'Indie Flower', cursive;
+  color: #4ecca3;
+  font-family: "Indie Flower", cursive;
 }
 
 img {
@@ -50,8 +57,7 @@ img {
 
 footer {
   margin-top: 5%;
-  color: #EEEEEE;
+  color: #eeeeee;
   text-align: center;
-  font-family: 'Indie Flower', cursive;
-
+  font-family: "Indie Flower", cursive;
 }

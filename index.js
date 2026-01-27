@@ -1,26 +1,55 @@
-function roll() {
-  let randomNumber1 = Math.floor(Math.random() * 6 + 1);
-  let randomDiceImage = "dice" + randomNumber1 + ".png";
-  let randomImageSource = "images/" + randomDiceImage;
+function randomNumber() {
+  return Math.floor(Math.random() * 6) + 1;
+}
 
-  let image1 = document.querySelectorAll("img")[0];
-  image1.setAttribute("src", randomImageSource);
+function setDiceImg(value) {
+  return `images/dice${value}.png`;
+}
 
-  let randomNumber2 = Math.floor(Math.random() * 6 + 1);
-  let randomDiceImage2 = "dice" + randomNumber2 + ".png";
-  let randomImageSource2 = "images/" + randomDiceImage2;
-
-  let image2 = document.querySelectorAll("img")[1];
-  image2.setAttribute("src", randomImageSource2);
-  if (randomNumber1 > randomNumber2) {
-    document.querySelector("h2").innerHTML = "Player1 WON!";
-    document.querySelectorAll("p")[0].innerHTML = "🏆Player 1";
-  } else if (randomNumber1 < randomNumber2) {
-    document.querySelector("h2").innerHTML = "Player2 WON!";
-    document.querySelectorAll("p")[1].innerHTML = "Player 2🏆";
+function getResult(p1, p2) {
+  if (p1 > p2) {
+    return {
+      title: "Player1 WON!",
+      p1: "🏆 Player 1",
+      p2: "Player 2",
+    };
+  } else if (p1 < p2) {
+    return {
+      title: "Player2 WON!",
+      p1: "Player 1",
+      p2: "Player 2 🏆",
+    };
   } else {
-    document.querySelector("h2").innerHTML = "its a draw";
+    return {
+      title: "its a draw",
+      p1: "Player 1",
+      p2: "Player 2",
+    };
   }
 }
 
-document.querySelector("button").addEventListener("click", roll());
+function renderResult(result) {
+  const h2 = document.querySelector("h2");
+  const ps = document.querySelectorAll("p");
+
+  h2.textContent = result.title;
+  ps[0].textContent = result.p1;
+  ps[1].textContent = result.p2;
+}
+
+function roll() {
+  const n1 = randomNumber();
+  const n2 = randomNumber();
+
+  const img1 = document.querySelectorAll("img")[0];
+  const img2 = document.querySelectorAll("img")[1];
+
+  img1.setAttribute("src", setDiceImg(n1));
+  img2.setAttribute("src", setDiceImg(n2));
+
+  const result = getResult(n1, n2);
+  renderResult(result);
+}
+
+const btn = document.getElementById("btn");
+btn.addEventListener("click", roll);
